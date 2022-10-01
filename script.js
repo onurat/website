@@ -1,10 +1,19 @@
-document.getElementById('button').addEventListener('click', (event) => {
-  let element_button = document.getElementById('button');
-  element_button.innerText = 'add an apple';
-  let element_list = document.getElementById('list');
-  let new_ul = document.createElement('ul');
-  new_ul.innerText = 'apple';
+function getNumberOrString(value) {
+  // Convert a string value to a number if possible
+  let number_value = Number(value);
+  if (Number.isNaN(number_value)) {
+    return value
+  } else {
+    return number_value
+  }
+}
 
-  element_list.appendChild(new_ul);
+
+
+document.getElementById('submit').addEventListener('click', (event) => {
+  let element_comment = document.getElementById('comment');
+  element_comment.innerText = getNumberOrString(document.getElementById('input_comment').value);
+  let element_comment2 = document.getElementById('comment2');
+  element_comment2.innerText = getNumberOrString(document.getElementById('input_name').value);
 
 });
